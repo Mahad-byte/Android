@@ -1,0 +1,273 @@
+/**
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
+ */
+
+fun Temp(){
+    println("A Function")
+}
+
+fun main() {
+   // For Loop
+   val letters = listOf("A", "B", "c")
+   //  letter(var), in(keyword), letters(val)(mine)   
+   for(letter in letters){
+       println("The next letter is $letters")
+   }
+   
+   /**
+    * Print numbers ranging from 1 to 5, use until for not going in last number
+    * If wrote 5..1, nothing will print as 5 > 1, so there is no range in 5 and 1
+    * use step for increment, i in 1..5 step 2
+    */
+   for(i in 1..5){
+       print(i)
+   }
+
+   Temp();
+
+}
+
+
+// Kotlin func with parameters
+/*fun temp(num : Int)
+{
+    for(i in 1..5)
+    {
+        println(num + i)
+	}
+}
+
+
+fun main() {
+   //val num = 0
+   temp(0)
+}
+
+fun printStars(num: Int) {
+    for (j in 1..num) {
+        print("*")
+    }
+    println()
+}
+
+fun ascendingTriangle(height: Int) {
+    for (i in 1..height) {
+        printStars(i)
+    }
+}
+
+fun main() {
+    ascendingTriangle(5)
+}
+
+
+fun triangleArea(width: Double, height: Double): Double {
+    return width * height / 2
+}
+
+fun main() {
+    val area: Double = triangleArea(1.0, 2.0)
+    println(area) // 1.0
+    println(triangleArea(2.0, 2.0)) // 2.0
+    println(triangleArea(5.0, 5.0)) // 12.5
+    println(triangleArea(10.0, 20.0)) // 100.0
+}*/
+
+
+fun getPoints(basePoints: Int, boost: Int): Int { 
+    return basePoints * boost 
+} 
+ 
+fun main() { 
+    var score = 0; 
+    println(score) 
+    score += getPoints(10, 1) 
+    println(score) 
+    score += getPoints(20, 2) 
+    println(score) 
+    score += getPoints(-10, 1) 
+    println(score) 
+    score += getPoints(5, 3) 
+    println(score) 
+    score += getPoints(-15, 2) 
+}
+
+
+
+class Employee(
+	val name:String,
+    var position:String
+)
+{//Function Body
+    var label:String = "$name, $position"
+}
+
+interface Animal{
+	val type:String
+    fun pet()
+}
+class Dog(
+	val name:String,
+    override val type:String //Overrides(gives value) type in interface	
+):Animal{					//Inheritance
+    override fun pet()
+    {
+        println("Blah")
+    }
+}
+fun pet(animal:Animal)
+{
+    animal.pet()
+}
+
+
+fun main()
+{
+    val Emp:Employee=Employee(name = "w", position = "ee")
+    println(Emp.label)
+    
+    pet(Dog(name = "dog", type = "german"))
+}
+
+//Not working
+
+data class Doog(
+val name: String
+)
+
+fun main() {
+val pluto1 = Doog("Pluto")
+val pluto2 = Doog("Pluto")
+
+println(pluto1 == pluto2) // false		//true for data doog		
+println(pluto1 == pluto1) // true
+
+println(pluto1) // Dog@404b9385
+println("Dog: $pluto1") // Dog: Dog@404b9385
+val dog = Doog("Pluto")
+val (name) = dog
+println(name) // Pluto
+
+
+println(dog.copy()) 
+println(dog.copy(name = "Neptune")) // Dog(name=Neptune)
+
+//Pair class
+val pair = Pair(1.0, 'A')
+println(pair.first) // 1.0
+println(pair.second) // A
+val (number, letter) = pair
+    // the type of number is Double
+    // the type of letter is Char
+println(number) // 1.0
+println(letter) // A
+
+/*val pair = 1.0 to 'A'
+println(pair.first) // 1.0
+println(pair.second) // A
+
+//Triple
+val pair = Triple(1F, "ABC", true)
+println(pair.first) // 1.0
+println(pair.second) // ABC
+println(pair.third) // true*/
+}
+
+/*fun main()
+{
+    val Emp:Employee=Employee(name = "w", position = "ee")
+    println(Emp.label)
+    
+    pet(Dog(name = "dog", type = "german"))
+    
+    println("A" == "A") // true
+	println("A" == "B") // false
+    
+    
+}*/
+
+
+
+
+
+
+
+
+//working
+data class Dog(
+    val name: String
+)
+
+fun main() {
+    val pluto1 = Dog("Pluto")
+    val pluto2 = Dog("Pluto")
+
+    println(pluto1 == pluto2) // true
+    println(pluto1 == pluto1) // true
+
+    println(pluto1) // Dog(name=Pluto)
+    println("Dog: $pluto1") // Dog: Dog(name=Pluto)
+
+    val dog = Dog("Pluto")
+    val (name) = dog
+    println(name) // Pluto
+
+    println(dog.copy())
+    println(dog.copy(name = "Neptune")) // Dog(name=Neptune)
+
+    // Pair class
+    val pair = Pair(1.0, 'A')
+    println(pair.first) // 1.0
+    println(pair.second) // A
+
+    val (number, letter) = pair
+    // the type of number is Double
+    // the type of letter is Char
+    println(number) // 1.0
+    println(letter) // A
+}
+
+fun main() {
+    val ints: List<Int> = listOf(1, 2, 3)
+    println(ints) // [1, 2, 3]
+    
+   /* val list = listOf("A", "B", "C")
+    println(list) // [A, B, C]
+    
+    //for add
+    println(list + listOf("C", "D")) // [A, B, C, D]
+    println(listOf("Z") + list) // [Z, A, B]
+    println(list.size) // 3*/
+    
+    /*val list = listOf("A", "B", "C")
+    println(list.size == 0) // 3
+    println(list.isEmpty()) // False
+
+    val empty: Set<Int> = setOf()
+    println(empty.size == 0) // True
+    println(empty.isEmpty()) // True
+    
+    println(list.contains("A")) // true
+    println(list.contains("Z")) // false
+    
+    println("A" !in list) // false*/
+    
+     
+    val letters = listOf("A", "B", "C")
+    
+    for (letter in letters)
+    {
+        println(letter)
+    }
+    
+    
+     /*val list = mutableListOf("A", "B")
+    list.add("C")
+    println(list) // [A, B, C]
+    list.remove("B")
+    println(list) // [A, C]
+    
+     list[1] = "Z"
+    println(list) // [A, Z, C]*/
+} 

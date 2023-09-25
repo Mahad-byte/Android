@@ -1,0 +1,36 @@
+/*@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello! my Name is: $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    CoffeeeMahadTheme {
+        Greeting("Mahad")
+    }
+}*/
+
+
+/*@OptIn(ExperimentalMaterial3Api::class)
+//@Preview(showBackground = false)
+@Composable
+fun FirstComposable() {
+    var name= remember {
+        mutableStateOf("")
+    }
+    Column {
+        Text("Hello ${name.value}",
+            modifier = Modifier
+                .background(Color.Cyan)
+                .padding(16.dp)
+                .padding(16.dp)
+        )
+        TextField(value =name.value , onValueChange = {
+            name.value= it}
+        )
+    }
+}*/
