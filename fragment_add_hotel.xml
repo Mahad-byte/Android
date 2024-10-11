@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.AddHotelFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_name"
+        android:hint="Enter Hotel Name"
+        android:inputType="text"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_price"
+        android:inputType="number"
+        android:hint="Enter Your Price"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_img"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:text="Upload Image"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_record"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:text="Add hotel"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_record"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:text="Get hotel"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hotel_image"/>
+
+</LinearLayout>
